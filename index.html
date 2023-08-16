@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" href="./style/to_do.css">
+</head>
+<body>
+    <h1 align="center" >
+        TO-DO LIST
+    </h1>
+    
+    <section id="root">
+        <div class="utilHandle">
+            <input type="text" placeholder="Task" id="taskInput" >
+            <!-- <input type="date"> -->
+            <button class="btnNormal" onclick="add()" >ADD</button>
+        </div>
+        <div id="tasklist">
+             <!-- -->
+            <!-- <div class="utilHandle taskItem">
+                <div>my first task</div>
+                <span>
+                    <button class="btnNormal">Done</button>
+                    <span>
+                        <button class="btnNormal">Options</button>
+                        <div class="contextMenu">
+                            <div class="option">option</div>
+                            <div class="option">option</div>
+                            <div class="option">option</div>
+                            <div class="option">option</div>
+                            <div class="option">option</div>
+                        </div>
+                    </span>
+
+                </span>
+
+            </div> -->
+            
+
+        </div>
+        <div style="min-height: 30px;">
+            <button onclick="clean()" class="btnDanger" style="float:right;">CLEAR</button>
+        </div>
+    </section>
+
+    <!-- (General)
+    Add Task
+    Reset All
+    (Tasks)
+    Edit Task
+    Delete Tasks
+    Set Task State
+        Done
+        In Progress
+        Not Done
+    Popup -->
+</body>
+
+<script src="./js/to_do.js"></script>
+</html>

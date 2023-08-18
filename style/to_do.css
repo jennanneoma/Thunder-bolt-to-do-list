@@ -99,7 +99,7 @@ background: #e1e1e1;
     overflow: hidden;
     transition: all .3s;
     height: 0px;
-    max-height: 200px;
+    max-height: 70px;
     opacity: 0;
 }
 

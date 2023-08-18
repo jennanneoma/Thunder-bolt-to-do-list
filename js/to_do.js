@@ -2,9 +2,9 @@
 var storedList=[]
 var handle;
 handle = document.getElementById("tasklist");
-addItem("test")
 
-// repop()
+
+repop()
 
 
 function add(){
@@ -64,26 +64,24 @@ function addItem(Text){
     var contextMenu=document.createElement("div")
     var contextOption1=document.createElement("div")
     var contextOption2=document.createElement("div")
-    var contextOption3=document.createElement("div")
+    // var contextOption3=document.createElement("div")
 
     // to add the inner text
 
-    contextOption1.innerText="TestText"
-    contextOption2.innerText="TestText"
-    contextOption3.innerText="TestText"
+    contextOption1.innerText="Edit"
+    contextOption2.innerText="Delete"
 
     // storing contextoptions into the context menu
 
     contextMenu.appendChild(contextOption1)
     contextMenu.appendChild(contextOption2)
-    contextMenu.appendChild(contextOption3)
 
     // to add css
 
     contextMenu.classList.add("contextMenu")
     contextOption1.classList.add("option")
     contextOption2.classList.add("option")
-    contextOption3.classList.add("option")
+    // contextOption3.classList.add("option")
 
     // to put the two buttons in the task buttons
 
@@ -91,13 +89,6 @@ function addItem(Text){
     OptionsHandle.appendChild(taskButton_options)
     OptionsHandle.appendChild(contextMenu)
     taskButtons.appendChild(OptionsHandle)
-
-
-    
-
-
-
-
 
 
     //put The two buttons into the Task Buttons
@@ -117,7 +108,7 @@ function addItem(Text){
     taskItem.classList.add("utilHandle","taskItem")
     handle.appendChild(taskItem)
 
-    taskButton_done.onclick = ()=>{
+    var action = ()=>{
         var index = storedList.indexOf(Text)
         storedList.splice(index, 1);
         localStorage.setItem("storedList",JSON.stringify(storedList))
@@ -126,6 +117,26 @@ function addItem(Text){
     taskButton_options.onclick=()=>{
         contextMenu.classList.toggle("context-show")
     }
+    taskButton_done.onclick =  action
+    contextOption2.onclick=action
+
+    var edit=()=>{
+        var newText= prompt("Edit your task",Text)
+        taskText.innerText=newText
+        var index = storedList.indexOf(Text)
+        storedList[index]=newText
+
+        
+        localStorage.setItem("storedList",JSON.stringify(storedList))
+        repop()
+        
+
+
+    }
+    contextOption1.onclick=edit
+
+
+    
 }
 
 
